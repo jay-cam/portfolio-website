@@ -69,7 +69,7 @@ const Banner = ({ banner }) => {
                 {first_name}
               </span>
               <span className="relative my-4 md:my-0 hidden md:inline-block align-middle">
-                <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
+                <span className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden inline-block">
                   <img
                     className="mx-auto"
                     src={image}
@@ -80,7 +80,7 @@ const Banner = ({ banner }) => {
                     data-aos-duration="500"
                     data-aos-delay="150"
                   />
-                </div>
+                </span>
                 <svg
                   className={`absolute top-[-0px] right-[10px] transition duration-1000 delay-300 ${
                     isLoading ? "scale-0 rotate-[360deg]" : "scale-100 rorate-0"
