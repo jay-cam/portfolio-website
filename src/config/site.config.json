@@ -1,0 +1,41 @@
+{
+  "metaData": {
+    "title" : "Jay Campbell | Software Engineer",
+    "description" : "UCSD Computer Science student and software engineer focused on systems, web development, and problem-solving.",
+    "ogImage" : "/images/ogimage.jpg",
+    "keywords" : "Jay Campbell, Computer Science, Software Engineer, Portfolio, Blog"
+  },
+  "logo" : null,
+  "favicon" : "/images/favicon.png",
+  "baseUrl" : "https://jaycampbell.dev",
+  "basePath" : "/",
+  "trailingSlash" : false,
+
+  "settings" : {
+    "deviceIndicator" : false,
+    "pagination_limit" : 6
+  },
+
+  "socialLinks" : [
+    {
+      "name": "FB",
+      "fullName": "Facebook",
+      "link": "https://facebook.com/"
+    },
+    {
+      "name": "X",
+      "fullName": "X / Twitter",
+      "link": "https://twitter.com/"
+    },
+    {
+      "name": "IN",
+      "fullName": "Linkedin",
+      "link": "https://www.linkedin.com/in/jay-campbell"
+    },
+    {
+      "name": "GITHUB",
+      "fullName": "Github",
+      "link": "https://github.com/jay-cam"
+    }
+  ]
+}
