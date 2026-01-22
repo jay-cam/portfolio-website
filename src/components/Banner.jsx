@@ -68,7 +68,7 @@ const Banner = ({ banner }) => {
               <span className="inline-block mx-2 md:mx-0">
                 {first_name}
               </span>
-              <div className="relative my-4 md:my-0 hidden md:block">
+              <span className="relative my-4 md:my-0 hidden md:inline-block align-middle">
                 <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
                   <img
                     className="mx-auto"
@@ -96,7 +96,7 @@ const Banner = ({ banner }) => {
                     fill="#ff9800"
                   />
                 </svg>
-              </div>
+              </span>
               <span className="inline-block mx-2 md:mx-0">
                 {last_name}
               </span>
