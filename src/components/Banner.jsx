@@ -68,8 +68,8 @@ const Banner = ({ banner }) => {
               <span className="inline-block mx-2 md:mx-0">
                 {first_name}
               </span>
-              <div className="relative my-4 md:my-0 hidden md:block">
-                <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
+              <span className="relative my-4 md:my-0 hidden md:block">
+                <span className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
                   <img
                     className="mx-auto"
                     src={image}
@@ -80,7 +80,7 @@ const Banner = ({ banner }) => {
                     data-aos-duration="500"
                     data-aos-delay="150"
                   />
-                </div>
+                </span>
                 <svg
                   className={`absolute top-[-0px] right-[10px] transition duration-1000 delay-300 ${
                     isLoading ? "scale-0 rotate-[360deg]" : "scale-100 rorate-0"
@@ -96,7 +96,7 @@ const Banner = ({ banner }) => {
                     fill="#ff9800"
                   />
                 </svg>
-              </div>
+              </span>
               <span className="inline-block mx-2 md:mx-0">
                 {last_name}
               </span>
