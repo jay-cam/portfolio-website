@@ -12,6 +12,11 @@ export default defineConfig({
   site: config.baseUrl ? config.baseUrl : "http://examplesite.com",
   base: config.basePath ? config.basePath : "/",
   trailingSlash: config.trailingSlash ? "always" : "ignore",
+//added for validation to pass
+  build: {
+    inlineStylesheets: "never",
+  },
+
   markdown: {
     remarkPlugins: [],
   },
