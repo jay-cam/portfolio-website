@@ -6,7 +6,6 @@
     "keywords" : "Jay Campbell, Computer Science, Software Engineer, Portfolio, Blog"
   },
   "logo" : null,
-  "favicon" : "/images/favicon.png",
   "baseUrl" : "https://jaycampbell.dev",
   "basePath" : "/",
   "trailingSlash" : false,
