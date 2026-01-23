@@ -38,7 +38,7 @@ const Banner = ({ banner }) => {
               <div className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden">
                 <img
                   className="mx-auto"
-                  src={`${BASE_URL}images/${image}`}
+                  src={`${BASE_URL}${image}`}
                   alt={first_name + last_name}
                   height={150}
                   width={150}
@@ -73,7 +73,7 @@ const Banner = ({ banner }) => {
                 <span className="bg-[#E3DFDC] mx-5 rounded-full overflow-hidden inline-block">
                   <img
                     className="mx-auto"
-                    src={`${BASE_URL}images/${image}`}
+                    src={`${BASE_URL}${image}`}
                     alt={first_name + last_name}
                     height={150}
                     width={150}
