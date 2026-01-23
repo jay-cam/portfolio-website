@@ -11,7 +11,7 @@ import config from "./src/config/site.config.json";
 export default defineConfig({
   site: config.baseUrl ? config.baseUrl : "https://jaycampbell.dev",
   base: config.basePath ? config.basePath : "/members/jaycampbell/",
-  trailingSlash: config.trailingSlash ? "always" : "ignore",
+  trailingSlash: "always",
 
   markdown: {
     remarkPlugins: [],
