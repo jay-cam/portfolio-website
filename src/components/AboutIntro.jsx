@@ -1,5 +1,7 @@
 import { markdownify } from "@utils/textConverter";
 import React, { useEffect, useRef, useState } from 'react';
+const BASE_URL = import.meta.env.BASE_URL;
+
 
 const AboutIntro = ({ about }) => {
   // Random Numbers
@@ -67,7 +69,7 @@ const AboutIntro = ({ about }) => {
                 }}
               >
                 <img
-                  src={item}
+                  src={`${BASE_URL}images/${item}`}
                   alt="Image"
                   width={500}
                   height={607}

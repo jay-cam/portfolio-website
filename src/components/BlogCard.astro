@@ -1,5 +1,5 @@
 ---
-import { formatDate } from '@utils/formatDate';
+import { formatDate } from "@utils/formatDate";
 
 const { data, slug } = Astro.props;
 const { title, date, image, category } = data;
@@ -8,7 +8,7 @@ const { title, date, image, category } = data;
 <article class="relative group text-center">
   <div class="relative overflow-hidden rounded-lg mb-8">
     <img
-      src={image}
+      src={`${import.meta.env.BASE_URL}images/${image}`}
       alt={title}
       width="620"
       height="500"
@@ -18,13 +18,18 @@ const { title, date, image, category } = data;
   </div>
   <div class="px-6 transition-all duration-500 group-hover:opacity-60">
     <div class="flex flex-wrap items-center justify-center mb-4 space-x-5">
-      <span class="inline-block text-sm rounded-full bg-[#efefef] px-3 py-1 capitalize">
+      <span
+        class="inline-block text-sm rounded-full bg-[#efefef] px-3 py-1 capitalize"
+      >
         {category}
       </span>
       <span class="opacity-75 text-sm">{formatDate(date)}</span>
     </div>
     <h3 class="text-2xl leading-tight">
-      <a href={`/blog/${slug}`} class="stretched-link">
+      <a
+        href={`${import.meta.env.BASE_URL}blog/${slug}`}
+        class="stretched-link"
+      >
         {title}
       </a>
     </h3>

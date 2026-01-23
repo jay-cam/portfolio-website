@@ -2,7 +2,7 @@
   "metaData": {
     "title" : "Jay Campbell | Software Engineer",
     "description" : "UCSD Computer Science student and software engineer focused on systems, web development, and problem-solving.",
-    "ogImage" : "/images/ogimage.jpg",
+    "ogImage" : "images/ogimage.jpg",
     "keywords" : "Jay Campbell, Computer Science, Software Engineer, Portfolio, Blog"
   },
   "logo" : null,

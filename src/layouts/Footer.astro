@@ -91,7 +91,10 @@ const animatedLines = Array.from({ length: 5 });
           {
             footerMenu.map((item) => (
               <li class="inline-block hover:opacity-75 transition-op duration-300">
-                <a href={item.link} class="link">
+                <a
+                  href={`${import.meta.env.BASE_URL}${item.link}`}
+                  class="link"
+                >
                   {item.name}
                 </a>
               </li>
