@@ -4,6 +4,7 @@ import menu from '@config/menus.json';
 import siteConfig from '@config/site.config.json';
 import { useEffect, useRef, useState } from "react";
 
+
 const Header = () => {
   const [pathname, setPathname] = useState("");
   useEffect(() => {
@@ -13,6 +14,10 @@ const Header = () => {
   const { socialLinks } = siteConfig;
   const { mainMenu } = menu;
   const mainMenuLength = mainMenu.length;
+  const BASE_URL = import.meta.env.BASE_URL;
+  const normalizedPath = (pathname || "/").startsWith(BASE_URL)
+  ? (pathname || "/").slice(BASE_URL.length - 1)
+  : (pathname || "/");
 
   const [indicatorPosition, setIndicatorPosition] = useState(null);
   const navRef = useRef(null);
@@ -56,7 +61,6 @@ const Header = () => {
       left: link.offsetLeft === 0 ? link.offsetLeft + 8 : link.offsetLeft,
       width: link.offsetLeft === 0 ? link.offsetWidth + 7 : link.offsetWidth,
     });
-    setPathname(window.location.pathname);
   };
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -84,32 +88,40 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    const banner = document.querySelector(".banner");
-    const bannerScrollHeight = banner?.scrollHeight + 100;
-    const observer = new IntersectionObserver(
-      (entry) => {
-        window.addEventListener("scroll",
-          () => entry[0].isIntersecting ? setIsActive(false) : setIsActive(true)
-        );
+  const banner = document.querySelector(".banner");
+  if (!banner) return;
 
-        let lastScrollTop = 0;
-        const handleScroll = () => {
-          const currentScrollTop = document.documentElement.scrollTop;
-          if (currentScrollTop > bannerScrollHeight && currentScrollTop > lastScrollTop) {
-            setIsInvisible(true);
-          } else {
-            setIsInvisible(false);
-          }
-          lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-      },
-      { threshold: [0] }
-    );
-    banner && observer.observe(banner);
-    return () => banner && observer.unobserve(banner);
-  }, []);
+  const bannerScrollHeight = banner.scrollHeight + 100;
+  let lastScrollTop = 0;
+
+  const handleScroll = () => {
+    const currentScrollTop = document.documentElement.scrollTop;
+
+    // Hide/show header based on scroll direction past banner
+    if (currentScrollTop > bannerScrollHeight && currentScrollTop > lastScrollTop) {
+      setIsInvisible(true);
+    } else {
+      setIsInvisible(false);
+    }
+
+    lastScrollTop = Math.max(currentScrollTop, 0);
+  };
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setIsActive(!entry.isIntersecting);
+    },
+    { threshold: 0 }
+  );
+
+  observer.observe(banner);
+  window.addEventListener("scroll", handleScroll);
+
+  return () => {
+    observer.disconnect();
+    window.removeEventListener("scroll", handleScroll);
+  };
+}, []);
 
   return (
     <header 
@@ -138,12 +150,12 @@ const Header = () => {
             {mainMenu.map((item, key) => (
               <a
                 key={key}
-                href={item.link}
+                href={`${BASE_URL}${item.link}`}
                 className={`py-3 px-[22px] leading-none relative z-20 block text-white hover:text-white/50 hover:lg:text-white ${!mobileNavClose ? "opacity-100" : "opacity-0"} lg:opacity-100 ${
-                  pathname === item.link
-                    || pathname.includes("/blog") && item.link === "/blog"
-                    || pathname.includes("/project") && item.link === "/project"
-                    ? "active" : ""
+                  ((item.link === "" && normalizedPath === "/") ||
+                    (item.link !== "" && normalizedPath.startsWith(`/${item.link}`)))
+                      ? "active" : ""
+
                 }`}
                 onMouseEnter={handleLinkMouseEnter}
                 onMouseLeave={handleLinkMouseLeave}
@@ -182,7 +194,7 @@ const Header = () => {
             <ul className="inline-flex gap-x-4">
               {socialLinks.map((item, key) => (
                 <li key={key} className="inline-block hover:opacity-75 transition-op duration-300">
-                  <a href={item.link} className="link">{item.name}</a>
+                  <a href={`${BASE_URL}${item.link}`} className="link">{item.name}</a>
                 </li>
               ))}
             </ul>
