@@ -51,7 +51,7 @@ if (totalPages <= 4) {
           href={
             indexPageLink
               ? `${BASE}${section ? section + "/" : ""}`
-              : `${BASE}${section ? section + "/" : ""}${currentPage - 1}`
+              : `${BASE}${section ? section + "/" : ""}/page/${currentPage - 1}`
           }
           class="border border-dark/20 px-6 py-3 rounded-full font-medium transition-all hover:bg-black hover:text-white"
         >
@@ -92,7 +92,7 @@ if (totalPages <= 4) {
             href={
               pagination === 1
                 ? `${BASE}${section ? section + "/" : ""}`
-                : `${BASE}${section ? section + "/" : ""}${pagination}`
+                : `${BASE}${section ? section + "/" : ""}/page/${pagination}`
             }
             class="border border-dark/20 px-6 py-3 rounded-full font-medium transition-all hover:bg-black hover:text-white"
           >
@@ -104,7 +104,7 @@ if (totalPages <= 4) {
       {/* next page */}
       {hasNextPage ? (
         <a
-          href={`${BASE}${section ? section + "/" : ""}${currentPage + 1}`}
+          href={`${BASE}${section ? section + "/" : ""}/page/${currentPage + 1}`}
           class="border border-dark/20 px-6 py-3 rounded-full font-medium transition-all hover:bg-black hover:text-white"
         >
           <span class="flex items-center">
