@@ -43,7 +43,7 @@ const ReviewSlider = ({ whatClientsSay }) => {
       >
         <img
           className="inline-block invert rotate-180"
-          src="/images/arrow-right.svg"
+          src={`${import.meta.env.BASE_URL}images/arrow-right.svg`}
           alt="arrow-right"
           height={31}
           width={39}
@@ -55,7 +55,7 @@ const ReviewSlider = ({ whatClientsSay }) => {
       >
         <img
           className="inline-block invert"
-          src="/images/arrow-right.svg"
+          src={`${import.meta.env.BASE_URL}images/arrow-right.svg`}
           alt="arrow-right"
           height={31}
           width={39}

@@ -20,7 +20,7 @@ const animatedLines = Array.from({ length: 5 });
     !isContactPage && (
       <div class="mb-24 overflow-hidden">
         <a
-          href="/contact"
+          href={`${import.meta.env.BASE_URL}contact/`}
           class="footer-cta relative w-[1920px] max-w-full mx-auto overflow-hidden block text-5xl font-secondary font-medium group"
         >
           {[0, 1].map((i) => (
@@ -35,7 +35,7 @@ const animatedLines = Array.from({ length: 5 });
                     </span>
                     <img
                       class="inline-block ml-16 cta-icon"
-                      src="/images/arrow-right.svg"
+                      src={`${import.meta.env.BASE_URL}images/arrow-right.svg`}
                       alt="arrow-right"
                       height="31"
                       width="39"
@@ -52,7 +52,7 @@ const animatedLines = Array.from({ length: 5 });
                     </span>
                     <img
                       class="inline-block ml-16 cta-icon"
-                      src="/images/arrow-right.svg"
+                      src={`${import.meta.env.BASE_URL}images/arrow-right.svg`}
                       alt="arrow-right"
                       height="31"
                       width="39"
@@ -110,7 +110,7 @@ const animatedLines = Array.from({ length: 5 });
         <p class="text-white/75">
           Developed by <a
             class="link text-white"
-            href="/"
+            href="https://jaycampbell.dev"
             target="_blank"
             rel="noopener noreferrer">Jay Campbell</a
           >
