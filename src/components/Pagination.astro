@@ -1,5 +1,6 @@
 ---
 const { section, currentPage, totalPages } = Astro.props;
+const BASE = import.meta.env.BASE_URL;
 
 const indexPageLink = currentPage === 2;
 const hasPrevPage = currentPage > 1;
@@ -49,8 +50,8 @@ if (totalPages <= 4) {
         <a
           href={
             indexPageLink
-              ? `${section ? "/" + section : "/"}`
-              : `${section ? "/" + section : ""}/${currentPage - 1}`
+              ? `${BASE}${section ? section + "/" : ""}`
+              : `${BASE}${section ? section + "/" : ""}${currentPage - 1}`
           }
           class="border border-dark/20 px-6 py-3 rounded-full font-medium transition-all hover:bg-black hover:text-white"
         >
@@ -90,8 +91,8 @@ if (totalPages <= 4) {
           <a
             href={
               pagination === 1
-                ? `${section ? "/" + section : "/"}`
-                : `${section ? "/" + section : ""}/${pagination}`
+                ? `${BASE}${section ? section + "/" : ""}`
+                : `${BASE}${section ? section + "/" : ""}${pagination}`
             }
             class="border border-dark/20 px-6 py-3 rounded-full font-medium transition-all hover:bg-black hover:text-white"
           >
@@ -103,7 +104,7 @@ if (totalPages <= 4) {
       {/* next page */}
       {hasNextPage ? (
         <a
-          href={`${section ? "/" + section : ""}/${currentPage + 1}`}
+          href={`${BASE}${section ? section + "/" : ""}${currentPage + 1}`}
           class="border border-dark/20 px-6 py-3 rounded-full font-medium transition-all hover:bg-black hover:text-white"
         >
           <span class="flex items-center">
