@@ -194,7 +194,8 @@ const Header = () => {
             <ul className="inline-flex gap-x-4">
               {socialLinks.map((item, key) => (
                 <li key={key} className="inline-block hover:opacity-75 transition-op duration-300">
-                  <a href={`${BASE_URL}${item.link}`} className="link">{item.name}</a>
+                  <a href={item.link} className="link" target="_blank" rel="noopener noreferrer">
+  {item.name}</a>
                 </li>
               ))}
             </ul>
