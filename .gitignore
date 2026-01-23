@@ -1,4 +1,14 @@
-node_modules
-dist/
-.DS_Store
+# Node
+node_modules/
+
+# Astro
 .astro/
+dist/
+
+# macOS junk
+.DS_Store
+**/.DS_Store
+
+# Env files
+.env
+.env.*
