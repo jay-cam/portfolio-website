@@ -9,8 +9,8 @@ import config from "./src/config/site.config.json";
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.baseUrl ? config.baseUrl : "http://examplesite.com",
-  base: config.basePath ? config.basePath : "/",
+  site: config.baseUrl ? config.baseUrl : "https://jaycampbell.dev",
+  base: config.basePath ? config.basePath : "/members/jaycampbell/",
   trailingSlash: config.trailingSlash ? "always" : "ignore",
 
   markdown: {
