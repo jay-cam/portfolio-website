@@ -98,10 +98,19 @@ const {
           s = d.getElementsByTagName("script")[0];
         g.async = true;
         g.src = u + "matomo.js";
-        s.parentNode.insertBefore(g, s);
+        s.parentNode?.insertBefore(g, s);
       })();
     </script>
     <!-- End Matomo Code -->
+
+    <!-- Log Rocket tag -->
+    <script
+      src="https://cdn.logr-in.com/LogRocket.min.js"
+      crossorigin="anonymous"></script>
+    <script>
+      window.LogRocket && window.LogRocket.init("xwmmrk/jaycampbelldev");
+    </script>
+    <!-- End Log Rocket Code -->
   </head>
 
   <body
