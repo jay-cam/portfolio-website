@@ -25,7 +25,7 @@ main::after,
 footer::after,
 .page-banner::after {
   content: '';
-  background-image: url("/members/jaycampbell/images/noise.webp");
+  background-image: url("/images/noise.webp");
   inset: 0;
   position: absolute;
   z-index: -99999;

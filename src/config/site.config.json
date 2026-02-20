@@ -7,7 +7,7 @@
   },
   "logo" : null,
   "baseUrl" : "https://jaycampbell.dev",
-  "basePath" : "/members/jaycampbell/",
+  "basePath" : "/",
   "trailingSlash" : true,
 
   "settings" : {
