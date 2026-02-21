@@ -1,0 +1,99 @@
+---
+draft: false
+date: "2025-06-01"
+title: "Mobile Device Application Use Analysis"
+description: "Statistical analysis of smartphone usage behavior using session modeling and burstiness metrics."
+image: "images/mobile-usage.jpg"
+color: "#55487D"
+category: "Data Science"
+
+projectInfo:
+  - title: "Dataset"
+    data: "StudentLife Smartphone Usage Dataset"
+  - title: "Users"
+    data: "48"
+  - title: "Data Type"
+    data: "App launch logs & timestamped activity records"
+  - title: "Focus"
+    data: "Burstiness, session duration, total usage time"
+  - title: "Analysis Type"
+    data: "Exploratory Data Analysis + Behavioral Feature Engineering"
+  - title: "Tech Stack"
+    data: |
+      - Python
+      - Pandas
+      - NumPy
+      - Matplotlib
+      - Jupyter Notebook
+  - title: "GitHub"
+    data: "https://github.com/jay-cam/Mobile-Device-Application-Use-Analysis"
+---
+
+## Overview
+
+Conducted a behavioral analysis of smartphone application usage patterns using timestamped app-launch logs from the StudentLife dataset.  
+
+Engineered structured behavioral features from raw event data to model session behavior, total engagement time, and burst activity. The goal was to transform low-level log data into interpretable behavioral metrics suitable for digital well-being analysis and human-computer interaction research.
+
+<img
+  src="/images/mobile-burstiness.jpg"
+  alt="Burstiness Metrics"
+/>
+
+<img
+  src="/images/mobile-session-distribution.jpg"
+  alt="Distribution Metrics"
+/>
+
+## Video Presentation
+
+<video width="100%" controls>
+  <source src="/videos/mobile-usage.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+---
+
+## Approach
+
+- Cleaned and structured raw timestamp-based smartphone logs  
+- Converted UNIX timestamps into datetime objects for temporal analysis  
+- Defined sessions using inter-launch interval thresholds  
+- Engineered behavioral metrics:
+  - Total usage time  
+  - Average session duration  
+  - Inter-launch interval distribution  
+  - Burstiness coefficient  
+- Performed exploratory data analysis (EDA) with statistical summaries and visualizations  
+- Compared behavioral patterns across users  
+
+---
+
+## Results
+
+- Identified significant variability in smartphone engagement across users  
+- Observed heavy-tailed distributions in inter-launch intervals  
+- Detected burst behavior in high-frequency app launch patterns  
+- Distinguished between short-burst users and sustained-session users  
+- Demonstrated how raw log data can be transformed into interpretable behavioral signals  
+
+---
+
+## Teamwork & Collaboration
+
+This project was completed in a collaborative data science team.
+
+- Divided responsibilities across data cleaning, feature engineering, visualization, and statistical interpretation  
+- Used shared Jupyter notebooks and Git-based version control for reproducibility  
+- Held regular coordination meetings to align on modeling decisions and evaluation methods  
+- Contributed specifically to session modeling logic and burstiness metric design  
+
+---
+
+## What I Learned
+
+- How to convert raw event logs into structured behavioral features  
+- How session definitions impact downstream behavioral metrics  
+- Why burstiness captures behavioral intensity better than simple averages  
+- How real-world human activity data often follows heavy-tailed distributions  
+- How to collaborate effectively on a reproducible analytical workflow  
