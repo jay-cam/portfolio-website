@@ -1,0 +1,155 @@
+---
+draft: false
+date: "2026-01-15"
+title: "Spellventure – High-Performance Canvas-Based MVC Game Platform"
+description: "Led frontend architecture for a modular, performance-optimized educational game built with TypeScript, Konva.js, and CI/CD automation."
+image: "images/spellventure.jpg"
+color: "#BE0000"
+category: "Software Engineering"
+
+projectInfo:
+  - title: "Team Size"
+    data: "6 Engineers"
+  - title: "Total Commits"
+    data: "600+"
+  - title: "Estimated LOC"
+    data: "~8,000+ (TypeScript)"
+  - title: "Sprint Cycles"
+    data: "5 Agile Iterations"
+  - title: "Architecture"
+    data: "Model–View–Controller (MVC)"
+  - title: "Rendering Engine"
+    data: "HTML5 Canvas (Konva.js)"
+  - title: "State System"
+    data: "Centralized Deterministic GameState"
+  - title: "CI/CD"
+    data: "GitHub Actions (Lint + Build Automation)"
+  - title: "Tech Stack"
+    data: |
+      - TypeScript
+      - Konva.js
+      - Node.js
+      - Vite
+      - GitHub Actions
+      - ESLint
+  - title: "GitHub"
+    data: "https://github.com/jay-cam/Spellventure"
+---
+
+# Overview
+
+Led frontend architecture for a high-performance, canvas-rendered educational game platform built with TypeScript and Konva.js, delivering 600+ commits and ~8,000+ lines of production code across 5 Agile sprints.
+
+Designed for responsiveness, modularity, and scalable feature expansion.
+
+---
+
+## Video Presentation
+
+<div class="flex flex-col md:flex-row justify-center gap-8">
+  <video class="w-full md:w-1/2 rounded-xl" controls>
+    <source src="/videos/MainGameDemo.mp4" type="video/mp4" />
+  </video>
+
+  <video class="w-full md:w-1/2 rounded-xl" controls>
+    <source src="/videos/MinigameDemo.mp4" type="video/mp4" />
+  </video>
+</div>
+
+---
+
+# Frontend Architecture & Performance Engineering
+
+- Architected strict MVC separation to decouple rendering, state, and interaction logic
+- Designed centralized GameState system to prevent UI-state desynchronization
+- Implemented deterministic screen-switching engine to eliminate race conditions
+- Optimized canvas rendering pipeline using Konva layering and selective redraws
+- Leveraged Konva hit-detection internals for efficient event routing without DOM overhead
+- Reduced interaction latency by isolating drag logic from global re-renders
+- Eliminated unnecessary state mutations to minimize frame drops
+
+---
+
+# UI Systems & Interaction Engineering
+
+- Built dynamic word-to-blank mapping system with real-time UI updates
+- Implemented drag-and-drop snapping with collision-aware positioning
+- Engineered heart/life failure system with conditional mini-game injection
+- Designed reusable controller abstraction to support independent mini-game integration
+- Refactored canvas layering to resolve z-index and input capture conflicts
+
+---
+
+# Scalability & Maintainability
+
+- Reduced cross-module coupling via shared state interface
+- Standardized controller patterns to enable parallel feature development
+- Structured file architecture to support independent mini-game modules
+- Improved debuggability by isolating view rendering from business logic
+
+---
+
+# Dev Workflow & Engineering Rigor
+
+- Enforced feature-branch Git workflow
+- Built GitHub Actions CI pipeline (Node provisioning, lint, build validation)
+- Prevented unstable merges through automated quality gates
+- Led PR reviews and architectural consistency enforcement
+
+---
+
+# Leadership & Ownership
+
+- Led 6-engineer Agile team across 5 sprint cycles
+- Defined frontend architecture standards
+- Coordinated multi-repo feature integration
+- Resolved rendering, interaction, and state synchronization bugs
+- Delivered production-ready system under strict deadlines
+
+---
+
+# Approach
+
+- Began with architectural design defining strict MVC boundaries
+- Centralized all gameplay state inside a deterministic GameState model
+- Designed controllers as pure logic units independent from rendering layer
+- Implemented canvas-based rendering via Konva to avoid DOM performance bottlenecks
+- Introduced state-driven transitions instead of event-chained navigation
+- Built mini-game injection mechanism triggered by core game state
+- Established Git-based Agile workflow with sprint milestones and CI enforcement
+- Iteratively refactored modules to reduce coupling and improve maintainability
+
+---
+
+# Results
+
+- Delivered 600+ commits across 5 structured sprint cycles
+- Produced ~8,000+ lines of production-ready TypeScript
+- Eliminated UI race-condition bugs via deterministic state transitions
+- Achieved smooth drag-and-drop interaction without global re-render penalties
+- Enabled parallel mini-game development through modular controller abstraction
+- Maintained build stability via CI-enforced lint and build validation
+- Shipped scalable architecture capable of supporting additional gameplay modes
+
+---
+
+# Teamwork & Collaboration
+
+This project was completed by a team of six engineers.
+
+I served as frontend architecture lead, responsible for defining structural standards, enforcing MVC discipline, and coordinating integration across independently developed modules.
+
+We followed Scrum-style Agile practices including sprint planning, milestone tracking via GitHub Issues, feature-branch development, and pull request review before merge.
+
+I resolved architectural inconsistencies, standardized file structure, enforced CI compliance, and ensured alignment on state management patterns to maintain long-term scalability.
+
+---
+
+# What I Learned
+
+- How to architect high-performance canvas-based UI systems
+- How to design deterministic state machines to eliminate race conditions
+- How hit detection enables scalable interaction routing without DOM overhead
+- How strict separation of concerns improves maintainability and team velocity
+- How CI/CD automation reduces integration risk in multi-engineer projects
+- How to lead frontend architecture decisions in an Agile team environment
