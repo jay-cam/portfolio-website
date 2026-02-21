@@ -1,54 +1,112 @@
 ---
 draft: false
-date: "2025-06-02"
-title: "Shuvashini"
-description: "Color Splash"
-image: "images/project/04.jpg"
+date: "2025-12-05"
+title: "Latent Factor Recommender System for Video Game Ratings"
+description: "Matrix factorization–based collaborative filtering model trained on 4.6M Amazon video game ratings."
+image: "images/project/latent-factor.jpg"
 color: "#307B93"
-category: "Art"
+#color: "#1F2937"
+category: "Machine Learning"
 
 projectInfo:
-  - title: "Client"
-    data: "BocahKecil"
-  - title: "Timeline"
-    data: "3 Months"
-  - title: "Services"
+  - title: "Dataset"
+    data: "Amazon Reviews 2023 – Video Games 5-core"
+  - title: "Users"
+    data: "2.8M"
+  - title: "Items"
+    data: "137.2K"
+  - title: "Ratings"
+    data: "4.6M"
+  - title: "Best Test MSE"
+    data: "1.3779"
+  - title: "Baseline MSE"
+    data: "1.6768 (Global Mean)"
+  - title: "Tech Stack"
     data: |
-      - Branding
-      - Website design
-      - Marketing and Planning
-  - title: "website"
-    data: "https://aver.io"
+      - Python
+      - NumPy
+      - Pandas
+      - scikit-learn
+      - Surprise (SVD)
+  - title: "GitHub"
+    data: "https://github.com/jay-cam/Latent-Factor-Model-for-Video-Game-Rating-Prediction"
 ---
 
-## We couldn't be happier with the branding strategy developed.
+## Overview
 
-Throughout the process, Aver's collaborative approach and open communication ensured a seamless experience. The outstanding results achieved have elevated our brand and positioned us for long-term success. We couldn't be happier with Aver's work.
+Implemented and evaluated a collaborative filtering system using latent factor matrix factorization to predict user ratings for video games.
+
+The model was trained and evaluated on a large-scale dataset containing 4.6 million ratings across 2.8 million users and 137K items, requiring careful handling of sparsity and generalization.
 
 <div class="image columns-1 sm:columns-2 gap-8">
 
 <img
-  src={`${import.meta.env.BASE_URL}images/project/04-01.jpg`}
-  alt="Shuvashini 01"
+  src={`${import.meta.env.BASE_URL}images/project/latent-factor.jpg`}
+  alt="ML Metrics 01"
 />
 
 <img
   src={`${import.meta.env.BASE_URL}images/project/04-02.jpg`}
-  alt="Shuvashini 02"
+  alt="ML Metrics 02"
 />
 
 </div>
 
+## Video Presentation
 
-## Challenge
+<video width="100%" controls>
+  <source src={`${import.meta.env.BASE_URL}videos/latent-factor.mp4`} type="video/mp4"
+   />
+   Your browser does not support the video tag.
+</video>
 
-Choosing Aver as our branding agency was one of the best decisions we made. Their professionalism, creativity, and dedication made them a true partner in our brand journey. Aver's team took the time to understand our goals and values, crafting a comprehensive brand strategy that perfectly aligned with our vision. They translated this strategy into a visually captivating and impactful visual identity that truly represents our brand essence.
+## Approach
 
-Aver's collaborative approach and open communication ensured a seamless experience. The outstanding results achieved have elevated our brand and positioned us for long-term success. We couldn't be happier with Aver's work.
+- Implemented SVD-based latent factor decomposition  
+- Optimized user and item embeddings using stochastic gradient descent  
+- Applied L2 regularization to mitigate overfitting  
+- Tuned hyperparameters including embedding dimension, learning rate, and regularization strength  
+- Benchmarked against multiple baseline models:
+  - Global mean predictor  
+  - User bias model  
+  - Item bias model  
+  - Pearson similarity  
+  - Jaccard similarity  
+  - Time-decay similarity variants  
 
+---
 
-## Solution
+## Results
 
-The client expresses great satisfaction with their decision to choose Aver as their branding agency, describing it as one of the best decisions they made. Aver is commended for their professionalism, creativity, and dedication, which resulted in a strong partnership throughout the client's brand journey. Aver's team took the time to deeply understand the client's goals and values, leading to the development of a comprehensive brand strategy that aligned perfectly with the client's vision. This strategy was then translated into a visually captivating and impactful visual identity that truly represents the essence of the brand.
+The SVD latent factor model achieved:
 
-The client appreciates Aver's collaborative approach and open communication, highlighting the seamless experience they had while working together. The outstanding results achieved by Aver have successfully elevated the client's brand and positioned them for long-term success. Overall, the client expresses utmost satisfaction with the work done by Aver.
+- **Test MSE: 1.3779**  
+- **Global Mean Baseline MSE: 1.6768**  
+- ~17–18% reduction in prediction error compared to baseline  
+
+Latent factor modeling consistently outperformed similarity-based and bias-only approaches on both validation and test sets.
+
+---
+
+## Teamwork & Collaboration
+
+This project was completed in a team of four engineers.
+
+I led the team by organizing task distribution, setting internal milestones, and ensuring alignment with project deadlines. We followed lightweight Agile practices, including:
+
+- Bi-weekly standup meetings to track progress and resolve blockers  
+- Iterative development with incremental model improvements  
+- Clear division of responsibilities (data preprocessing, modeling, evaluation, benchmarking)  
+- Shared Git-based workflow for collaboration and version control  
+
+I coordinated model experimentation efforts and aligned the team on evaluation methodology to ensure consistent and fair comparison across all models.
+
+---
+
+## What I Learned
+
+- Why matrix factorization scales better than memory-based similarity models  
+- The impact of regularization in high-sparsity datasets  
+- How hyperparameter tuning meaningfully affects generalization performance  
+- How to design reproducible evaluation pipelines for recommender systems  
+- How to lead a small engineering team using Agile principles to deliver a complete, well-evaluated system on schedule  
