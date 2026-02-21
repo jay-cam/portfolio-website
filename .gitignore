@@ -12,3 +12,6 @@ dist/
 # Env files
 .env
 .env.*
+
+# videos
+public/videos/*.mp4
