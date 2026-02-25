@@ -9,7 +9,7 @@ import config from "./src/config/site.config.json";
 
 // https://astro.build/config
 export default defineConfig({
-  site: config.baseUrl ? config.baseUrl : "https://jaycampbell.dev",
+  site: config.baseUrl ? config.baseUrl : "https://portfolio.jaycampbell.dev",
   base: config.basePath ? config.basePath : "/",
   trailingSlash: "always",
 
