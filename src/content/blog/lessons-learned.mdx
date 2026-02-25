@@ -1,0 +1,56 @@
+---
+draft: false
+title: "Architectural Mistakes I Made — And Fixed"
+description: "Lessons learned from debugging race conditions, state desynchronization, and performance bottlenecks in a production-scale student engineering project."
+image: "images/blog/broken-code.jpg"
+date: "2025-12-15"
+category: "tech"
+---
+
+One of the most valuable engineering lessons I’ve learned at UC San Diego didn’t come from a textbook — it came from breaking my own system.
+
+While leading frontend architecture for a large-scale TypeScript project, I initially underestimated how quickly state complexity can spiral. Early iterations worked in isolation, but as features expanded, subtle race conditions and UI-state desynchronization began appearing. Components rendered inconsistently. Event handlers fired out of order. Small timing assumptions created fragile behavior.
+
+The root issue wasn’t a bug — it was architecture.
+
+### Mistake #1: Implicit State Coupling
+
+My first implementation allowed UI components to manage localized state while also reacting to shared global variables. This worked temporarily but created hidden dependencies. As interactions became more complex, it became unclear which component truly “owned” the source of truth.
+
+**Fix:** I refactored to a centralized state management model. By introducing a deterministic state controller with explicit transitions, I eliminated ambiguity and reduced side effects. Every state mutation became intentional and traceable.
+
+---
+
+### Mistake #2: Rendering Too Much, Too Often
+
+Performance degradation surfaced as we scaled feature complexity. Drag interactions and animation logic triggered unnecessary redraws, causing frame drops and inconsistent input responsiveness.
+
+**Fix:** I isolated interaction logic from render cycles and implemented selective redraw strategies using layered canvas rendering. Reducing unnecessary state mutations significantly improved responsiveness and stability.
+
+---
+
+### Mistake #3: Assuming “Working” Meant “Scalable”
+
+An early prototype passed all functional tests. That created a false sense of architectural confidence. As additional features were introduced, structural weaknesses became apparent.
+
+**Fix:** I shifted from feature-first thinking to systems-first thinking. Before implementing new functionality, I began evaluating how it would affect state flow, rendering layers, and future extensibility.
+
+---
+
+## What Changed in My Engineering Approach
+
+These mistakes forced me to think beyond implementation and focus on system behavior under growth and stress.
+
+I now approach projects with:
+
+- Clear separation of concerns  
+- Explicit ownership of state  
+- Deterministic transitions over implicit assumptions  
+- Performance considerations at the architectural level  
+- Refactoring as a normal part of iteration  
+
+Most importantly, I learned that debugging is rarely about the surface-level bug. It is often about the structure beneath it.
+
+Engineering maturity doesn’t come from writing code that works — it comes from recognizing when the system design itself needs to evolve.
+
+Those lessons now guide how I approach every new project.
